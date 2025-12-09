@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Leonardo Nickson — Site</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -15,10 +14,8 @@
       --light-brown:#d6a883;
       --cream:#fff6f0;
       --text:#3a2b27;
-      --card-radius:14px;
     }
 
-    /* Fonte Agrandir (local) */
     @font-face{
       font-family:'Agrandir';
       src:url('Agrandir-Regular.otf') format('opentype');
@@ -34,22 +31,32 @@
       line-height:1.6;
     }
 
-    /* Header */
+    /* HEADER */
     .site-header{
       background:var(--brown);
-      color:var(--cream);
+      padding:22px 28px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:22px 28px;
       flex-wrap:wrap;
+      position:relative;
+    }
+
+    /* ✅ LOGO PEQUENA NO CANTO */
+    .corner-logo{
+      position:absolute;
+      top:10px;
+      left:10px;
+      width:40px;
+      height:40px;
+      object-fit:contain;
     }
 
     .name-large{
       font-family:'Great Vibes', cursive;
       font-size:50px;
       color:var(--cream);
-      letter-spacing:2px;
+      margin-left:50px;
     }
 
     .nav{
@@ -80,11 +87,22 @@
       align-items:center;
     }
 
+    .photo-wrap{
+      background:transparent;
+      padding:0;
+      box-shadow:none;
+      border-radius:0;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      align-items:center;
+    }
+
     .photo-wrap img{
-      width:70%;
-      height:600px;
+      width:400px;
+      height:400px;
       object-fit:cover;
-      border-radius:10px;
+      border-radius:12px;
     }
 
     .email{
@@ -93,7 +111,6 @@
       font-weight:500;
     }
 
-    /* Sobre o autor com Agrandir */
     .bio{
       font-family:'Agrandir','Montserrat',sans-serif;
     }
@@ -124,7 +141,10 @@
     @media (max-width:900px){
       .profile{grid-template-columns:1fr;}
       .name-large{font-size:36px;}
-      .nav a{padding:8px 14px;}
+      .photo-wrap img{
+        width:280px;
+        height:280px;
+      }
     }
   </style>
 </head>
@@ -132,6 +152,9 @@
 <body>
 
   <header class="site-header">
+
+    <img src="capivara.png" class="corner-logo" alt="Logo">
+
     <div class="name-large">Leonardo Nickson</div>
 
     <nav class="nav">
@@ -153,14 +176,16 @@
         <h2>Sobre o autor</h2>
         <p>
           Leonardo Nickson é nascido em Telêmaco Borba, Paraná. Iniciou seus estudos de música
-          na casa da cultura no início dos anos 2000. Em 2010 formou-se em História na UEL.
+          na casa da cultura no início dos anos 2000.
         </p>
         <p>
           Em 2018 tornou-se especialista em Artes Visuais pela UEM e em 2023 tornou-se Mestre
-          pela UTFPR. Atua com fotografia, música e produções audiovisuais.
+          pela UTFPR.
         </p>
       </div>
     </section>
+
+  </main>
 
 </body>
 </html>
