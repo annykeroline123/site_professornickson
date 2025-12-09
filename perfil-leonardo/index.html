@@ -6,17 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Leonardo Nickson — Site</title>
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --brown:#5d2b1f;
       --light-brown:#d6a883;
       --cream:#fff6f0;
       --text:#3a2b27;
-    }
-
-    @font-face{
-      font-family:'Agrandir';
-      src:url('Agrandir-Regular.otf') format('opentype');
     }
 
     *{box-sizing:border-box}
@@ -66,8 +64,9 @@
 
     /* NOME */
     .name-large{
-      font-family:'Great Vibes', cursive;
-      font-size:50px;
+      font-family:'Montserrat', sans-serif;
+      font-size:42px;
+      font-weight:600;
       color:var(--cream);
     }
 
@@ -108,7 +107,6 @@
       align-items:center;
     }
 
-    /* FOTO */
     .photo-wrap img{
       width:400px;
       height:400px;
@@ -122,9 +120,8 @@
       font-weight:500;
     }
 
-    /* BIO */
     .bio{
-      font-family:'Agrandir','Montserrat',sans-serif;
+      font-family:'Montserrat', sans-serif;
     }
 
     .bio h2{
@@ -139,7 +136,7 @@
 
     @media (max-width:900px){
       .profile{grid-template-columns:1fr;}
-      .name-large{font-size:36px;}
+      .name-large{font-size:32px;}
       .photo-wrap img{
         width:280px;
         height:280px;
