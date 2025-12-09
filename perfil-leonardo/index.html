@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Leonardo Nickson — Perfil</title>
 
-  <!-- Fontes bonitas -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -39,27 +39,27 @@
       flex-wrap:wrap;
     }
 
-    .brand{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
+    .title{
+      line-height:1;
     }
 
-    .title .name-large{
-      font-family:'Playfair Display', serif;
-      font-size:34px;
-      font-weight:700;
-      color:var(--cream);
-      letter-spacing:1px;
-    }
-
-    .title .name-small{
-      font-family:'Montserrat', sans-serif;
-      font-size:14px;
-      opacity:0.9;
+    /* ✅ Nome com fonte Great Vibes */
+    .name-large{
+      font-family:'Great Vibes', cursive;
+      font-size:48px;
+      font-weight:400;
       color:var(--cream);
       letter-spacing:2px;
+    }
+
+    .name-small{
+      font-family:'Montserrat', sans-serif;
+      font-size:14px;
       text-transform:uppercase;
+      letter-spacing:4px;
+      opacity:0.85;
+      color:var(--cream);
+      margin-top:-6px;
     }
 
     .nav{
@@ -117,7 +117,6 @@
     }
 
     .bio h2{
-      font-family:'Playfair Display', serif;
       margin:0 0 10px 0;
       font-size:22px;
     }
@@ -137,14 +136,13 @@
     }
 
     .section h2{
-      font-family:'Playfair Display', serif;
       margin-top:0;
       color:var(--brown);
     }
 
     @media (max-width:900px){
       .profile{grid-template-columns:1fr;}
-      .title .name-large{font-size:26px;}
+      .name-large{font-size:36px;}
       .nav a{padding:8px 14px;}
     }
   </style>
@@ -154,8 +152,8 @@
 
   <header class="site-header">
     <div class="title">
-      <div class="name-large">Leonardo</div>
-      <div class="name-small">Nickson</div>
+      <div class="name-large">Leonardo Nickson</div>
+      <div class="name-small">Perfil</div>
     </div>
 
     <nav class="nav">
