@@ -18,6 +18,14 @@
       --card-radius:14px;
     }
 
+    /* ✅ Fonte Agrandir local */
+    @font-face{
+      font-family: 'Agrandir';
+      src: url('Agrandir-Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     *{box-sizing:border-box}
 
     body{
@@ -28,7 +36,6 @@
       line-height:1.6;
     }
 
-    /* Header */
     .site-header{
       background:var(--brown);
       color:var(--cream);
@@ -43,11 +50,9 @@
       line-height:1;
     }
 
-    /* ✅ Nome com fonte Great Vibes */
     .name-large{
       font-family:'Great Vibes', cursive;
       font-size:48px;
-      font-weight:400;
       color:var(--cream);
       letter-spacing:2px;
     }
@@ -75,7 +80,6 @@
       font-weight:600;
       color:var(--brown);
       text-decoration:none;
-      box-shadow:0 2px 0 rgba(0,0,0,0.06) inset;
     }
 
     .container{
@@ -107,13 +111,17 @@
       height:400px;
       object-fit:cover;
       border-radius:10px;
-      display:block;
     }
 
     .email{
       font-size:14px;
       color:var(--brown);
       font-weight:500;
+    }
+
+    /* ✅ SOBRE O AUTOR com Agrandir */
+    .bio{
+      font-family:'Agrandir', 'Montserrat', sans-serif;
     }
 
     .bio h2{
