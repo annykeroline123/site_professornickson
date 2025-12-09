@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Leonardo Nickson — Site</title>
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -44,15 +45,15 @@
     .header-left{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:16px;
     }
 
-    /* LOGO */
+    /* LOGO QUADRADA COM CANTOS ARREDONDADOS */
     .logo-box{
-      width:70px;
-      height:70px;
+      width:90px;
+      height:90px;
       background:var(--light-brown);
-      border-radius:12px;
+      border-radius:20px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -60,8 +61,8 @@
     }
 
     .logo-box img{
-      width:50px;
-      height:50px;
+      width:65px;
+      height:65px;
       object-fit:contain;
     }
 
@@ -102,14 +103,13 @@
     .photo-wrap{
       background:transparent;
       padding:0;
-      box-shadow:none;
       display:flex;
       flex-direction:column;
       gap:12px;
       align-items:center;
     }
 
-    /* ✅ FOTO QUADRADA COM CANTOS SUAVES */
+    /* FOTO 400x400 COM CANTOS SUAVES */
     .photo-wrap img{
       width:400px;
       height:400px;
@@ -166,7 +166,7 @@
   <header class="site-header">
     <div class="header-left">
       <div class="logo-box">
-        <img src="logo.png" alt="Logo">
+        <img src="capivara.png" alt="Logo">
       </div>
       <div class="name-large">Leonardo Nickson</div>
     </div>
@@ -182,7 +182,7 @@
 
     <section class="profile">
       <div class="photo-wrap">
-        <img src="foto.png" alt="Foto de Leonardo">
+        <img src="nickson.png" alt="Foto de Leonardo">
         <div class="email">leonardo.silva@ifpr.edu.br</div>
       </div>
 
@@ -196,21 +196,6 @@
           Especialista em Artes Visuais (UEM) e Mestre pela UTFPR. Atua com fotografia e audiovisual.
         </p>
       </div>
-    </section>
-
-    <section id="artes" class="section">
-      <h2>Sala de Artes</h2>
-      <p>Área dedicada a produções artísticas e cultura visual.</p>
-    </section>
-
-    <section id="aula" class="section">
-      <h2>Aula</h2>
-      <p>Conteúdos pedagógicos e atividades.</p>
-    </section>
-
-    <section id="projetos" class="section">
-      <h2>Projetos</h2>
-      <p>Projetos audiovisuais e artísticos.</p>
     </section>
 
   </main>
