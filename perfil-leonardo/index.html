@@ -34,21 +34,34 @@
     /* HEADER */
     .site-header{
       background:var(--brown);
-      padding:22px 28px;
+      padding:20px 24px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       flex-wrap:wrap;
-      position:relative;
     }
 
-    /* ✅ LOGO PEQUENA NO CANTO */
-    .corner-logo{
-      position:absolute;
-      top:10px;
-      left:10px;
-      width:40px;
-      height:40px;
+    .header-left{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    /* LOGO */
+    .logo-box{
+      width:70px;
+      height:70px;
+      background:var(--light-brown);
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
+    }
+
+    .logo-box img{
+      width:50px;
+      height:50px;
       object-fit:contain;
     }
 
@@ -56,7 +69,6 @@
       font-family:'Great Vibes', cursive;
       font-size:50px;
       color:var(--cream);
-      margin-left:50px;
     }
 
     .nav{
@@ -91,13 +103,13 @@
       background:transparent;
       padding:0;
       box-shadow:none;
-      border-radius:0;
       display:flex;
       flex-direction:column;
       gap:12px;
       align-items:center;
     }
 
+    /* ✅ FOTO QUADRADA COM CANTOS SUAVES */
     .photo-wrap img{
       width:400px;
       height:400px;
@@ -152,10 +164,12 @@
 <body>
 
   <header class="site-header">
-
-    <img src="capivara.png" class="corner-logo" alt="Logo">
-
-    <div class="name-large">Leonardo Nickson</div>
+    <div class="header-left">
+      <div class="logo-box">
+        <img src="logo.png" alt="Logo">
+      </div>
+      <div class="name-large">Leonardo Nickson</div>
+    </div>
 
     <nav class="nav">
       <a href="#artes">Sala de artes</a>
@@ -168,21 +182,35 @@
 
     <section class="profile">
       <div class="photo-wrap">
-        <img src="nickson.png" alt="Foto de Leonardo Nickson">
+        <img src="foto.png" alt="Foto de Leonardo">
         <div class="email">leonardo.silva@ifpr.edu.br</div>
       </div>
 
       <div class="bio">
         <h2>Sobre o autor</h2>
         <p>
-          Leonardo Nickson é nascido em Telêmaco Borba, Paraná. Iniciou seus estudos de música
-          na casa da cultura no início dos anos 2000.
+          Leonardo Nickson é nascido em Telêmaco Borba, Paraná. Iniciou estudos na área musical
+          e em História pela UEL.
         </p>
         <p>
-          Em 2018 tornou-se especialista em Artes Visuais pela UEM e em 2023 tornou-se Mestre
-          pela UTFPR.
+          Especialista em Artes Visuais (UEM) e Mestre pela UTFPR. Atua com fotografia e audiovisual.
         </p>
       </div>
+    </section>
+
+    <section id="artes" class="section">
+      <h2>Sala de Artes</h2>
+      <p>Área dedicada a produções artísticas e cultura visual.</p>
+    </section>
+
+    <section id="aula" class="section">
+      <h2>Aula</h2>
+      <p>Conteúdos pedagógicos e atividades.</p>
+    </section>
+
+    <section id="projetos" class="section">
+      <h2>Projetos</h2>
+      <p>Projetos audiovisuais e artísticos.</p>
     </section>
 
   </main>
