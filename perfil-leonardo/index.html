@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Leonardo Nickson </title>
+  <title>Leonardo Nickson — Site</title>
 
-  <!-- Fontes -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -18,24 +18,23 @@
       --card-radius:14px;
     }
 
-    /* ✅ Fonte Agrandir local */
+    /* Fonte Agrandir (local) */
     @font-face{
-      font-family: 'Agrandir';
-      src: url('Agrandir-Regular.otf') format('opentype');
-      font-weight: normal;
-      font-style: normal;
+      font-family:'Agrandir';
+      src:url('Agrandir-Regular.otf') format('opentype');
     }
 
     *{box-sizing:border-box}
 
     body{
       margin:0;
-      font-family:'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      font-family:'Montserrat', sans-serif;
       background:var(--cream);
       color:var(--text);
       line-height:1.6;
     }
 
+    /* Header */
     .site-header{
       background:var(--brown);
       color:var(--cream);
@@ -46,25 +45,11 @@
       flex-wrap:wrap;
     }
 
-    .title{
-      line-height:1;
-    }
-
     .name-large{
       font-family:'Great Vibes', cursive;
-      font-size:48px;
+      font-size:50px;
       color:var(--cream);
       letter-spacing:2px;
-    }
-
-    .name-small{
-      font-family:'Montserrat', sans-serif;
-      font-size:14px;
-      text-transform:uppercase;
-      letter-spacing:4px;
-      opacity:0.85;
-      color:var(--cream);
-      margin-top:-6px;
     }
 
     .nav{
@@ -90,7 +75,7 @@
 
     .profile{
       display:grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:1fr 1fr;
       gap:28px;
       align-items:center;
     }
@@ -119,9 +104,9 @@
       font-weight:500;
     }
 
-    /* ✅ SOBRE O AUTOR com Agrandir */
+    /* Sobre o autor com Agrandir */
     .bio{
-      font-family:'Agrandir', 'Montserrat', sans-serif;
+      font-family:'Agrandir','Montserrat',sans-serif;
     }
 
     .bio h2{
@@ -132,7 +117,6 @@
     .bio p{
       margin:0 0 14px 0;
       text-align:justify;
-      line-height:1.7;
     }
 
     .section{
@@ -159,10 +143,7 @@
 <body>
 
   <header class="site-header">
-    <div class="title">
-      <div class="name-large">Leonardo Nickson</div>
-      <div class="name-small">Perfil</div>
-    </div>
+    <div class="name-large">Leonardo Nickson</div>
 
     <nav class="nav">
       <a href="#artes">Sala de artes</a>
@@ -173,7 +154,7 @@
 
   <main class="container">
 
-    
+    <section class="profile">
       <div class="photo-wrap">
         <img src="foto.png" alt="Foto de Leonardo Nickson">
         <div class="email">leonardo.silva@ifpr.edu.br</div>
@@ -191,23 +172,6 @@
         </p>
       </div>
     </section>
-
-    <section id="artes" class="section">
-      <h2>Sala de Artes</h2>
-      <p>Área dedicada a produções artísticas e cultura visual.</p>
-    </section>
-
-    <section id="aula" class="section">
-      <h2>Aula</h2>
-      <p>Conteúdos e atividades educacionais.</p>
-    </section>
-
-    <section id="projetos" class="section">
-      <h2>Projetos</h2>
-      <p>Projetos artísticos, audiovisuais e educacionais.</p>
-    </section>
-
-  </main>
 
 </body>
 </html>
