@@ -20,7 +20,7 @@
 
     body{
       margin:0;
-      font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      font-family:'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
       background:var(--cream);
       color:var(--text);
       line-height:1.6;
@@ -44,17 +44,14 @@
       flex:1;
     }
 
-    .logo{
+    /* ✅ LOGO REAL */
+    .logo-img{
       width:64px;
       height:64px;
       border-radius:12px;
+      object-fit:cover;
       background:var(--light-brown);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      color:var(--brown);
-      font-size:22px;
+      padding:4px;
     }
 
     .title{
@@ -74,7 +71,6 @@
       color:var(--cream);
     }
 
-    /* Menu */
     .nav{
       display:flex;
       gap:12px;
@@ -91,7 +87,6 @@
       box-shadow:0 2px 0 rgba(0,0,0,0.06) inset;
     }
 
-    /* Conteúdo */
     .container{
       max-width:1100px;
       margin:30px auto;
@@ -109,7 +104,7 @@
       background:white;
       padding:18px;
       border-radius:var(--card-radius);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      box-shadow:0 6px 20px rgba(0,0,0,0.06);
       display:flex;
       flex-direction:column;
       gap:12px;
@@ -167,7 +162,9 @@
 
   <header class="site-header">
     <div class="brand">
-      <div class="logo">LN</div>
+      <!-- ✅ LOGO AQUI -->
+      <img src="capivara.avif" alt="Logo" class="logo-img">
+
       <div class="title">
         <div class="name-large">Leonardo</div>
         <div class="name-small">Nickson</div>
@@ -185,7 +182,7 @@
 
     <section class="profile">
       <div class="photo-wrap">
-        <img src="foto.png" alt="Foto de Leonardo Nickson" />
+        <img src="foto.png" alt="Foto de Leonardo Nickson">
         <div class="email">leonardo.silva@ifpr.edu.br</div>
       </div>
 
@@ -193,12 +190,11 @@
         <h2>Sobre o autor</h2>
         <p>
           Leonardo Nickson é nascido em Telêmaco Borba, Paraná. Iniciou seus estudos de música
-          na casa da cultura no início dos anos 2000. Em 2010 formou-se em História na UEL. Após
-          lecionar em diversas instituições, passou no concurso do IFPR no final de 2015.
+          na casa da cultura no início dos anos 2000. Em 2010 formou-se em História na UEL.
         </p>
         <p>
-          Em 2018 tornou-se especialista em Artes Visuais pela UEM e em 2023 tornou-se Mestre pela UTFPR.
-          Atua com fotografia, música e produções audiovisuais.
+          Em 2018 tornou-se especialista em Artes Visuais pela UEM e em 2023 tornou-se Mestre
+          pela UTFPR. Atua com fotografia, música e produções audiovisuais.
         </p>
       </div>
     </section>
@@ -210,7 +206,12 @@
 
     <section id="aula" class="section">
       <h2>Aula</h2>
-      <p>Conteúdos, materiais e atividades educacionais.</p>
+      <p>Conteúdos e atividades educacionais.</p>
+    </section>
+
+    <section id="projetos" class="section">
+      <h2>Projetos</h2>
+      <p>Projetos artísticos, audiovisuais e educacionais.</p>
     </section>
 
   </main>
