@@ -13,10 +13,10 @@
       --light-brown:#d6a883;
       --cream:#fff6f0;
       --text:#3a2b27;
-      --card-bg:#f6d9c6;
-      --bg-dark:#5a2f23;
-      --bg-light:#f3cdb7;
-      --box:#d9b8a5;
+      --card-bg: #f6d9c6;
+      --bg-dark: #5a2f23;
+      --bg-light: #f3cdb7;
+      --box: #d9b8a5;
     }
 
     *{box-sizing:border-box}
@@ -26,14 +26,16 @@
       font-family:'Montserrat', sans-serif;
       background:var(--cream);
       color:var(--text);
+      line-height:1.6;
     }
 
-    header{
+    /* HEADER */
+    .site-header{
       background:var(--brown);
       padding:20px 24px;
       display:flex;
-      justify-content:space-between;
       align-items:center;
+      justify-content:space-between;
       flex-wrap:wrap;
     }
 
@@ -43,25 +45,25 @@
       color:var(--cream);
     }
 
-    nav{
+    .nav{
       display:flex;
       gap:12px;
       flex-wrap:wrap;
     }
 
-    nav a{
+    .nav a{
       background:var(--light-brown);
-      color:var(--brown);
       padding:10px 20px;
       border-radius:28px;
       font-weight:600;
+      color:var(--brown);
       text-decoration:none;
     }
 
     .container{
       max-width:1100px;
       margin:30px auto;
-      padding:0 20px 80px;
+      padding:0 20px 60px;
     }
 
     /* PERFIL */
@@ -75,8 +77,8 @@
     .photo-wrap{
       display:flex;
       flex-direction:column;
-      align-items:center;
       gap:12px;
+      align-items:center;
     }
 
     .photo-wrap img{
@@ -86,48 +88,73 @@
       border-radius:14px;
     }
 
-    .email{ font-size:14px; color:var(--brown); }
+    .email{
+      font-size:14px;
+      color:var(--brown);
+      font-weight:500;
+    }
 
-    .bio h2{ margin:0 0 10px; }
-    .bio p{ margin:0 0 14px; text-align:justify; }
+    .bio h2{
+      margin:0 0 10px 0;
+      font-size:22px;
+    }
 
-    section{
-      margin-top:80px;
+    .bio p{
+      margin:0 0 14px 0;
+      text-align:justify;
     }
 
     /* SALA DE ARTES */
+    #artes{
+      margin-top:80px;
+    }
+
     .artes-card{
-      background:var(--card-bg);
-      border-radius:20px;
-      padding:28px;
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 6px 0 rgba(0,0,0,0.05);
       display:flex;
       gap:24px;
-      flex-wrap:wrap;
       align-items:center;
-      box-shadow:0 6px 0 rgba(0,0,0,0.05);
+      flex-wrap:wrap;
+    }
+
+    .artes-text{
+      flex:1 1 400px;
     }
 
     .artes-text h2{
+      margin:0 0 14px 0;
       font-family:"Great Vibes", cursive;
       font-size:46px;
-      margin:0 0 14px;
+      color:#2b150f;
+    }
+
+    .artes-text p{
+      margin:0;
+      font-size:18px;
+      text-align:justify;
     }
 
     .artes-media{
       width:420px;
       max-width:100%;
-      aspect-ratio:16/9;
       position:relative;
       border-radius:14px;
       overflow:hidden;
       background:#000;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      aspect-ratio:16/9;
       cursor:pointer;
     }
 
-    .artes-media img, .artes-media video{
+    .artes-media img,
+    .artes-media video{
       width:100%;
       height:100%;
       object-fit:cover;
+      display:block;
     }
 
     .play{
@@ -136,24 +163,26 @@
       margin:auto;
       width:80px;
       height:80px;
-      background:rgba(0,0,0,.5);
+      background: rgba(0,0,0,0.5);
       border-radius:50%;
       display:flex;
       align-items:center;
       justify-content:center;
+      border:5px solid rgba(255,255,55,0.15);
     }
 
     .play:before{
       content:'';
-      margin-left:5px;
+      margin-left:6px;
       border-style:solid;
       border-width:16px 0 16px 26px;
-      border-color:transparent transparent transparent #fff;
+      border-color:transparent transparent transparent white;
     }
 
     /* AULAS */
     #aula{
-      background:var(--bg-light);
+      margin-top:80px;
+      background: var(--bg-light);
       padding:30px;
       border-radius:20px;
     }
@@ -162,25 +191,149 @@
       text-align:center;
       font-family:"Great Vibes", cursive;
       font-size:48px;
-      margin-bottom:30px;
+      margin:0 0 25px 0;
+      color:#5a2f23;
     }
 
     .columns{
       display:flex;
-      gap:20px;
-      flex-wrap:wrap;
       justify-content:space-between;
+      flex-wrap:wrap;
+      gap:20px;
     }
 
     .box{
-      background:var(--box);
+      background: var(--box);
       width:32%;
       min-width:260px;
       padding:25px;
       border-radius:18px;
     }
 
-    /* PROJETOS */
+    .box h3{
+      text-align:center;
+      font-size:26px;
+      margin-bottom:15px;
+    }
+
+    .box ul{
+      padding-left:18px;
+      line-height:1.6;
+    }
+
+    .box li{
+      margin-bottom:12px;
+    }
+
+    @media (max-width:900px){
+      .profile{grid-template-columns:1fr;}
+      .photo-wrap img{width:280px;height:280px;}
+      .name-large{font-size:36px;}
+      .box{width:100%;}
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="name-large">Leonardo Nickson</div>
+
+  <nav class="nav">
+    <a href="#artes">Sala de artes</a>
+    <a href="#aula">Aula</a>
+    <a href="#projetos">Projetos</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <!-- PERFIL -->
+  <section class="profile">
+    <div class="photo-wrap">
+      <img src="nickson.png" alt="Foto de Leonardo">
+      <div class="email">leonardo.silva@ifpr.edu.br</div>
+    </div>
+
+    <div class="bio">
+      <h2>Sobre o autor</h2>
+      <p>Leonardo Nickson é nascido em Telêmaco Borba, Paraná. Iniciou estudos na área musical e em História pela UEL.</p>
+      <p>Especialista em Artes Visuais (UEM) e Mestre pela UTFPR. Atua com fotografia e audiovisual.</p>
+    </div>
+  </section>
+
+  <!-- SALA DE ARTES -->
+  <section id="artes">
+    <div class="artes-card">
+      <div class="artes-text">
+        <h2>Sala de Artes</h2>
+        <p>Este espaço é dedicado à produção artística, vídeos, imagens e projetos visuais.</p>
+      </div>
+
+      <div class="artes-media" onclick="toggleVideo()">
+        <img id="thumb" src="https://images.unsplash.com/photo-1529421306624-2c27d8f0d2b2?auto=format&fit=crop&w=1200&q=60">
+        <video id="video" src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+        <div class="play" id="playBtn"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AULAS -->
+  <section id="aula">
+    <h2>Aulas</h2>
+
+    <div class="columns">
+
+      <div class="box">
+        <h3>Manhã</h3>
+        <ul>
+          <li>Sexta-feira<br>10:00 - 12:00<br><strong>Arte II</strong></li>
+          <li>AUT4 / MEC4 / INFO4<br>Sem aula<br><strong>Arte III</strong></li>
+          <li>JOG4 Lab de Música<br>13:30 - 15:30<br><strong>Arte I</strong></li>
+          <li>JOG1 Quiosque de<br><strong>Arte e Vídeo</strong></li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>Tarde</h3>
+        <ul>
+          <li>Quarta-feira<br>13:30 - 15:30<br><strong>MEC1 Quiosque Arte</strong></li>
+          <li>Quinta-feira<br>13:30 - 15:30<br><strong>INFO1 Quiosque Arte</strong></li>
+          <li>Quinta-feira<br>16:00 - 18:00<br><strong>AUT1 Quiosque Arte</strong></li>
+        </ul>
+      </div>
+
+      <div class="box" id="projetos">
+        <h3>Projetos</h3>
+        <ul>
+          <li>Quarta-feira<br><strong>Audiovisual / Fotografia</strong><br>09:00 - 11:00</li>
+          <li>Quinta-feira<br><strong>Audiovisual / Fotografia</strong><br>09:00 - 12:00</li>
+          <li>Sexta-feira<br><strong>Clube dos Artistas</strong><br>08:00 - 10:00</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<script>
+  const video = document.getElementById('video');
+  const thumb = document.getElementById('thumb');
+  const playBtn = document.getElementById('playBtn');
+
+  function toggleVideo(){
+    if(video.paused){
+      video.play();
+      thumb.style.display = 'none';
+      playBtn.style.display = 'none';
+    }else{
+      video.pause();
+      playBtn.style.display = 'flex';
+    }
+  }
+</script>
+/* PROJETOS */
     #projetos{
       background:var(--bg-light);
       padding:30px;
