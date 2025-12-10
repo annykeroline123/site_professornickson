@@ -315,24 +315,71 @@
     </div>
   </section>
 
+ <!-- PROJETOS -->
+  <section id="projetos">
+    <h2 style="text-align:center;">Projetos</h2>
+
+    <div class="projects-row">
+      
+      <div class="project-box">
+        <h3>Fotografia</h3>
+        <img src="foto1.jpg" style="width:100%;border-radius:14px;">
+        <p>Projeto de fotografia educacional.</p>
+      </div>
+
+      <div class="project-box">
+        <h3>Audiovisual</h3>
+        <div class="video-wrapper">
+          <img src="thumb-video.jpg">
+          <div class="play-btn" onclick="playVideo(this)">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 2v20l17-10L4 2z"/>
+            </svg>
+          </div>
+        </div>
+        <p>Produção de vídeos criativos.</p>
+      </div>
+
+    </div>
+
+    <h2 style="text-align:center;margin-top:40px;">Clube de Artistas</h2>
+    <div class="art-row">
+      <img src="arte1.jpg">
+      <img src="arte2.jpg">
+      <img src="arte3.jpg">
+      <img src="arte4.jpg">
+      <img src="arte5.jpg">
+    </div>
+  </section>
+
 </main>
 
 <script>
-  const video = document.getElementById('video');
-  const thumb = document.getElementById('thumb');
-  const playBtn = document.getElementById('playBtn');
-
-  function toggleVideo(){
-    if(video.paused){
-      video.play();
-      thumb.style.display = 'none';
-      playBtn.style.display = 'none';
-    }else{
-      video.pause();
-      playBtn.style.display = 'flex';
-    }
+function toggleVideo(){
+  const video = document.getElementById("video");
+  const thumb = document.getElementById("thumb");
+  const playBtn = document.getElementById("playBtn");
+  if(video.paused){
+    video.play();
+    thumb.style.display="none";
+    playBtn.style.display="none";
+  }else{
+    video.pause();
+    playBtn.style.display="flex";
   }
+}
+
+function playVideo(btn){
+  const wrapper = btn.parentElement;
+  wrapper.innerHTML = `
+    <video controls autoplay style="width:100%;height:100%;object-fit:cover;">
+      <source src="video.mp4" type="video/mp4">
+    </video>
+  `;
+}
 </script>
 
 </body>
 </html>
+
+
