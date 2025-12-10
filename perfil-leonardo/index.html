@@ -278,108 +278,371 @@
     </div>
   </section>
 
-  <!-- AULAS -->
-  <section id="aula">
-    <h2>Aulas</h2>
-
-    <div class="columns">
-
-      <div class="box">
-        <h3>Manhã</h3>
-        <ul>
-          <li>Sexta-feira<br>10:00 - 12:00<br><strong>Arte II</strong></li>
-          <li>AUT4 / MEC4 / INFO4<br>Sem aula<br><strong>Arte III</strong></li>
-          <li>JOG4 Lab de Música<br>13:30 - 15:30<br><strong>Arte I</strong></li>
-          <li>JOG1 Quiosque de<br><strong>Arte e Vídeo</strong></li>
-        </ul>
-      </div>
-
-      <div class="box">
-        <h3>Tarde</h3>
-        <ul>
-          <li>Quarta-feira<br>13:30 - 15:30<br><strong>MEC1 Quiosque Arte</strong></li>
-          <li>Quinta-feira<br>13:30 - 15:30<br><strong>INFO1 Quiosque Arte</strong></li>
-          <li>Quinta-feira<br>16:00 - 18:00<br><strong>AUT1 Quiosque Arte</strong></li>
-        </ul>
-      </div>
-
-      <div class="box" id="projetos">
-        <h3>Projetos</h3>
-        <ul>
-          <li>Quarta-feira<br><strong>Audiovisual / Fotografia</strong><br>09:00 - 11:00</li>
-          <li>Quinta-feira<br><strong>Audiovisual / Fotografia</strong><br>09:00 - 12:00</li>
-          <li>Sexta-feira<br><strong>Clube dos Artistas</strong><br>08:00 - 10:00</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
- <!-- PROJETOS -->
-  <section id="projetos">
-    <h2 style="text-align:center;">Projetos</h2>
-
-    <div class="projects-row">
-      
-      <div class="project-box">
-        <h3>Fotografia</h3>
-        <img src="WhatsApp Image 2025-12-10 at 20.35.46.jpeg" style="width:100%;border-radius:14px;">
-        <p>Projeto de fotografia educacional.</p>
-      </div>
-
-      <div class="project-box">
-        <h3>Audiovisual</h3>
-        <div class="video-wrapper">
-          <img src="cv (3).mp4">
-          <div class="play-btn" onclick="playVideo(this)">
-            <svg viewBox="0 0 24 24">
-              <path d="M4 2v20l17-10L4 2z"/>
-            </svg>
-          </div>
-        </div>
-        <p>Produção de vídeos criativos.</p>
-      </div>
-
-    </div>
-
-    <h2 style="text-align:center;margin-top:40px;">Clube de Artistas</h2>
-    <div class="art-row">
-      <img src="imagen1.jpeg">
-      <img src="imagen2.jpeg">
-      <img src="imagen3.jpeg">
-      <img src="imagen4.jpeg">
-      <img src="imagen5.jpeg">
-    </div>
-  </section>
-
-</main>
-
-<script>
-function toggleVideo(){
-  const video = document.getElementById("video");
-  const thumb = document.getElementById("thumb");
-  const playBtn = document.getElementById("playBtn");
-  if(video.paused){
-    video.play();
-    thumb.style.display="none";
-    playBtn.style.display="none";
-  }else{
-    video.pause();
-    playBtn.style.display="flex";
-  }
+ <style>
+/* ----------------- VARIÁVEIS ----------------- */
+:root {
+    --bg-dark: #5a2f23;
+    --bg-light: #f3cdb7;
+    --box: #d9b8a5;
+    --text: #3a2a22;
 }
 
+/* ----------------- BASE ----------------- */
+body {
+    margin: 0;
+    background: var(--bg-dark);
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1150px;
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 55px;
+    font-family: "Great Vibes", cursive;
+    color: #f0d8c6;
+    margin: 25px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-family: "Great Vibes", cursive;
+    font-size: 42px;
+    color: var(--bg-dark);
+    margin-bottom: 20px;
+}
+
+/* ------------------------------------------------ */
+/* ----------------- SALA DE ARTES ----------------- */
+/* ------------------------------------------------ */
+
+.sala-artes-card {
+    background: var(--box);
+    padding: 25px;
+    border-radius: 18px;
+    display: flex;
+    gap: 25px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.sala-text {
+    flex: 1;
+    min-width: 260px;
+}
+
+.sala-text h2 {
+    font-family: "Great Vibes", cursive;
+    font-size: 48px;
+    margin-top: 0;
+}
+
+.sala-text p {
+    text-align: justify;
+    font-size: 17px;
+}
+
+.sala-media {
+    width: 420px;
+    max-width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+}
+
+.sala-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.4);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.play-btn svg {
+    width: 38px;
+    height: 38px;
+    fill: white;
+    margin-left: 5px;
+}
+
+/* ------------------------------------------------ */
+/* --------------------- AULAS --------------------- */
+/* ------------------------------------------------ */
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.box {
+    background: var(--box);
+    width: 32%;
+    min-width: 260px;
+    padding: 25px;
+    border-radius: 18px;
+}
+
+.box h2 {
+    text-align: center;
+    font-size: 26px;
+}
+
+ul {
+    padding-left: 18px;
+    line-height: 1.6;
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+/* ------------------------------------------------ */
+/* -------------------- PROJETOS -------------------- */
+/* ------------------------------------------------ */
+
+.projects-row {
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.project-box {
+    background: var(--box);
+    width: 48%;
+    min-width: 260px;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.project-box h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.project-media img {
+    width: 100%;
+    height: 230px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.video-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.desc {
+    margin-top: 15px;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* ------------------------------------------------ */
+/* ----------------- CLUBE ARTISTAS ---------------- */
+/* ------------------------------------------------ */
+
+.art-club-box {
+    background: var(--box);
+    padding: 25px;
+    border-radius: 18px;
+    margin-top: 35px;
+    text-align: center;
+}
+
+.art-row {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.art-row img {
+    width: 130px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* ------------------------------------------------ */
+/* ------------------- RESPONSIVO ------------------ */
+/* ------------------------------------------------ */
+
+@media (max-width: 900px) {
+    .project-box, .box {
+        width: 100%;
+    }
+    .sala-media {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- ================= SALA DE ARTES ================= -->
+
+<h1>Sala de Artes</h1>
+
+<div class="sala-artes-card">
+
+    <div class="sala-text">
+        <h2>Sala de artes</h2>
+        <p>
+            A sala de Artes do IFPR é um espaço onde os alunos podem soltar a criatividade e experimentar diferentes formas de expressão, como pintura, desenho, teatro e música. O ambiente é acolhedor e cheio de possibilidades. Além de aprender técnicas, os estudantes também descobrem novas formas de se expressar e valorizar a cultura. É um lugar que une aprendizado, arte e imaginação.
+        </p>
+    </div>
+
+    <div class="sala-media">
+        <img src="thumb.jpg">
+        <div class="play-btn" onclick="playVideo(this)">
+            <svg viewBox="0 0 24 24">
+                <path d="M4 2v20l17-10L4 2z"></path>
+            </svg>
+        </div>
+    </div>
+
+</div>
+
+<!-- ================= AULAS ================= -->
+
+<h1>Aulas</h1>
+<div class="section-title">Horários</div>
+
+<div class="columns">
+
+    <div class="box">
+        <h2>Manhã</h2>
+        <ul>
+            <li>Sexta - Feira<br>10:00 - 12:00<br><strong>Arte II</strong></li>
+            <li>AUT4 / MEC4 / INFO4<br>Sem aula - Arte III</li>
+            <li>JOG4 Lab de Música<br>13:30 - 15:30<br><strong>Arte I</strong></li>
+            <li>JOG1 Quiosque de Arte e Vídeo</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2>Tarde</h2>
+        <ul>
+            <li>Quarta<br>13:30 - 15:30<br>MEC1 Quiosque Arte</li>
+            <li>Quinta<br>13:30 - 15:30<br>INFO1 Quiosque Arte</li>
+            <li>Quinta<br>16:00 - 18:00<br>AUT1 Quiosque Arte</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2>Projetos</h2>
+        <ul>
+            <li>Quarta<br>Audiovisual/Fotografia<br>9:00 - 11:00</li>
+            <li>Quinta<br>Audiovisual/Fotografia<br>9:00 - 12:00</li>
+            <li>Sexta<br>Clube dos Artistas<br>8:00 - 10:00</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- ================= PROJETOS ================= -->
+
+<h1>Projetos</h1>
+
+<div class="projects-row">
+
+    <div class="project-box">
+        <h2>Fotografia</h2>
+        <img src="foto1.jpg" class="project-media">
+        <p class="desc">
+            tem como objetivo despertar o olhar crítico e criativo dos estudantes por meio da fotografia.
+        </p>
+    </div>
+
+    <div class="project-box">
+        <h2>Audiovisual</h2>
+
+        <div class="video-wrapper">
+            <img src="thumb2.jpg">
+            <div class="play-btn" onclick="playVideo(this)">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 2v20l17-10L4 2z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <p class="desc">
+            promove a produção audiovisual e o desenvolvimento da criatividade através do vídeo.
+        </p>
+    </div>
+
+</div>
+
+<!-- ================= CLUBE DE ARTISTAS ================= -->
+
+<h1>Clube de Artistas</h1>
+
+<div class="art-club-box">
+
+    <div class="art-row">
+        <img src="arte1.jpg">
+        <img src="arte2.jpg">
+        <img src="arte3.jpg">
+        <img src="arte4.jpg">
+        <img src="arte5.jpg">
+    </div>
+
+    <p class="desc">
+        tem como objetivo introduzir estudantes ao universo da arte e da pintura, promovendo experimentação, autoconhecimento e criatividade.
+    </p>
+
+</div>
+
+</div>
+
+<script>
 function playVideo(btn){
-  const wrapper = btn.parentElement;
-  wrapper.innerHTML = `
-    <video controls autoplay style="width:100%;height:100%;object-fit:cover;">
-      <source src="video.mp4" type="video/mp4">
-    </video>
-  `;
+    const box = btn.parentElement;
+    box.innerHTML = `
+        <video autoplay controls style="width:100%; height:100%; object-fit:cover;">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    `;
 }
 </script>
 
 </body>
 </html>
-
-
