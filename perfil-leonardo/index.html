@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Leonardo Nickson — Site</title>
 
-  <!-- Google Fonts -->    
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -15,6 +14,9 @@
       --cream:#fff6f0;
       --text:#3a2b27;
       --card-bg: #f6d9c6;
+      --bg-dark: #5a2f23;
+      --bg-light: #f3cdb7;
+      --box: #d9b8a5;
     }
 
     *{box-sizing:border-box}
@@ -177,10 +179,57 @@
       border-color:transparent transparent transparent white;
     }
 
+    /* AULAS */
+    #aula{
+      margin-top:80px;
+      background: var(--bg-light);
+      padding:30px;
+      border-radius:20px;
+    }
+
+    #aula h2{
+      text-align:center;
+      font-family:"Great Vibes", cursive;
+      font-size:48px;
+      margin:0 0 25px 0;
+      color:#5a2f23;
+    }
+
+    .columns{
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .box{
+      background: var(--box);
+      width:32%;
+      min-width:260px;
+      padding:25px;
+      border-radius:18px;
+    }
+
+    .box h3{
+      text-align:center;
+      font-size:26px;
+      margin-bottom:15px;
+    }
+
+    .box ul{
+      padding-left:18px;
+      line-height:1.6;
+    }
+
+    .box li{
+      margin-bottom:12px;
+    }
+
     @media (max-width:900px){
       .profile{grid-template-columns:1fr;}
       .photo-wrap img{width:280px;height:280px;}
       .name-large{font-size:36px;}
+      .box{width:100%;}
     }
   </style>
 </head>
@@ -208,13 +257,8 @@
 
     <div class="bio">
       <h2>Sobre o autor</h2>
-      <p>
-        Leonardo Nickson é nascido em Telêmaco Borba, Paraná. Iniciou estudos na área musical
-        e em História pela UEL.
-      </p>
-      <p>
-        Especialista em Artes Visuais (UEM) e Mestre pela UTFPR. Atua com fotografia e audiovisual.
-      </p>
+      <p>Leonardo Nickson é nascido em Telêmaco Borba, Paraná. Iniciou estudos na área musical e em História pela UEL.</p>
+      <p>Especialista em Artes Visuais (UEM) e Mestre pela UTFPR. Atua com fotografia e audiovisual.</p>
     </div>
   </section>
 
@@ -223,17 +267,51 @@
     <div class="artes-card">
       <div class="artes-text">
         <h2>Sala de Artes</h2>
-        <p>
-          Este espaço é dedicado à produção artística, vídeos, imagens e projetos visuais.
-          Aqui você poderá conhecer trabalhos em andamento e explorações visuais.
-        </p>
+        <p>Este espaço é dedicado à produção artística, vídeos, imagens e projetos visuais.</p>
       </div>
 
       <div class="artes-media" onclick="toggleVideo()">
-        <img id="thumb" src="cv (1).mp4">
+        <img id="thumb" src="https://images.unsplash.com/photo-1529421306624-2c27d8f0d2b2?auto=format&fit=crop&w=1200&q=60">
         <video id="video" src="cv (1).mp4"></video>
         <div class="play" id="playBtn"></div>
       </div>
+    </div>
+  </section>
+
+  <!-- AULAS -->
+  <section id="aula">
+    <h2>Aulas</h2>
+
+    <div class="columns">
+
+      <div class="box">
+        <h3>Manhã</h3>
+        <ul>
+          <li>Sexta-feira<br>10:00 - 12:00<br><strong>Arte II</strong></li>
+          <li>AUT4 / MEC4 / INFO4<br>Sem aula<br><strong>Arte III</strong></li>
+          <li>JOG4 Lab de Música<br>13:30 - 15:30<br><strong>Arte I</strong></li>
+          <li>JOG1 Quiosque de<br><strong>Arte e Vídeo</strong></li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>Tarde</h3>
+        <ul>
+          <li>Quarta-feira<br>13:30 - 15:30<br><strong>MEC1 Quiosque Arte</strong></li>
+          <li>Quinta-feira<br>13:30 - 15:30<br><strong>INFO1 Quiosque Arte</strong></li>
+          <li>Quinta-feira<br>16:00 - 18:00<br><strong>AUT1 Quiosque Arte</strong></li>
+        </ul>
+      </div>
+
+      <div class="box" id="projetos">
+        <h3>Projetos</h3>
+        <ul>
+          <li>Quarta-feira<br><strong>Audiovisual / Fotografia</strong><br>09:00 - 11:00</li>
+          <li>Quinta-feira<br><strong>Audiovisual / Fotografia</strong><br>09:00 - 12:00</li>
+          <li>Sexta-feira<br><strong>Clube dos Artistas</strong><br>08:00 - 10:00</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
