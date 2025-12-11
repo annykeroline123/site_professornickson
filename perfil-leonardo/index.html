@@ -17,7 +17,6 @@
       --card-bg:#f6d9c6;
       --bg-light:#f3cdb7;
       --box:#d9b8a5;
-      --bg-dark:#5a2f23;
     }
 
     *{box-sizing:border-box}
@@ -26,10 +25,8 @@
       font-family:'Montserrat', sans-serif;
       background:var(--cream);
       color:var(--text);
-      line-height:1.6;
     }
 
-    /* HEADER */
     .site-header{
       background:var(--brown);
       padding:20px 24px;
@@ -45,8 +42,6 @@
       color:var(--cream);
     }
 
-    .nav{display:flex;gap:12px;flex-wrap:wrap}
-
     .nav a{
       background:var(--light-brown);
       padding:10px 20px;
@@ -54,15 +49,11 @@
       font-weight:600;
       color:var(--brown);
       text-decoration:none;
+      margin-left:8px;
     }
 
-    .container{
-      max-width:1100px;
-      margin:30px auto;
-      padding:0 20px 60px;
-    }
+    .container{max-width:1100px;margin:30px auto;padding:0 20px;}
 
-    /* PERFIL */
     .profile{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -77,7 +68,6 @@
       border-radius:14px;
     }
 
-    /* SALA DE ARTES */
     #artes{margin-top:80px}
 
     .artes-card{
@@ -93,10 +83,9 @@
     .artes-media{
       width:420px;
       aspect-ratio:16/9;
-      position:relative;
-      overflow:hidden;
       background:#000;
       border-radius:14px;
+      overflow:hidden;
       cursor:pointer;
     }
 
@@ -113,7 +102,6 @@
       background:var(--bg-light);
       padding:30px;
       border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
     }
 
     .columns{
@@ -129,13 +117,11 @@
       min-width:260px;
       padding:25px;
       border-radius:18px;
-      transition:.3s ease;
     }
 
     #aula ul{
       list-style:none;
       padding:0;
-      margin:0;
     }
 
     #aula li{
@@ -144,16 +130,6 @@
       border-radius:12px;
       margin-bottom:14px;
       text-align:center;
-      font-size:15px;
-      box-shadow: inset 0 0 0 1px rgba(90,47,35,0.08);
-    }
-
-    #aula li strong{
-      color:#5a2f23;
-    }
-
-    .box:hover{
-      transform:translateY(-4px);
     }
 
     /* PROJETOS */
@@ -161,23 +137,24 @@
 
     .projects-row{
       display:flex;
-      flex-wrap:wrap;
       gap:20px;
       justify-content:center;
+      flex-wrap:wrap;
     }
 
     .project-box{
       background:var(--box);
-      width:45%;
-      min-width:260px;
+      width:40%;
+      min-width:250px;
       padding:20px;
       border-radius:18px;
       text-align:center;
     }
 
-    .project-media img{
+    .project-box img,
+    .project-box video{
       width:100%;
-      height:180px;
+      max-height:180px;
       border-radius:12px;
       object-fit:cover;
     }
@@ -194,14 +171,13 @@
     .art-row{
       display:flex;
       justify-content:center;
-      gap:8px;
+      gap:10px;
       flex-wrap:wrap;
-      margin-bottom:15px;
     }
 
     .art-row img{
-      width:90px;
-      height:110px;
+      width:80px;
+      height:100px;
       object-fit:cover;
       border-radius:8px;
     }
@@ -226,33 +202,31 @@
 
 <main class="container">
 
-  <!-- PERFIL -->
   <section class="profile">
     <div class="photo-wrap">
       <img src="nickson.png">
-      <div class="email">leonardo.silva@ifpr.edu.br</div>
+      <div>leonardo.silva@ifpr.edu.br</div>
     </div>
     <div class="bio">
       <h2>Sobre o autor</h2>
-      <p>Sobre o autor: Leonardo Nickson é nascido em Telêmaco Borba, Paraná. Iniciou seus estudos de música na casa da cultura no início dos anos 2000. Em 2010 formou-se em História na UEL. Após lecionar em diversas instituições, passou no concurso do IFPR no final de 2015, onde é professor em dedicação exclusiva desde então. Em 2018 tornou-se especialista em Artes Visuais pela UEM, e em 2023 tornou-se Mestre pela UTFPR. Além da música, sua ênfase artística é na fotografia, onde atua desde 2016. Possui produções na audiovisuais, com a produção de clipes musicais e documentários sobre a história local.</p>
+      <p>Leonardo Nickson é nascido em Telêmaco Borba, Paraná...</p>
     </div>
   </section>
 
-  <!-- SALA DE ARTES -->
   <section id="artes">
     <div class="artes-card">
       <div>
         <h2>Sala de Artes</h2>
-        <p>A sala de Artes do IFPR é um espaço onde os alunos podem soltar a criatividade e experimentar diferentes formas de expressão, como pintura, desenho, teatro e música. O ambiente é acolhedor e cheio de possibilidades. Além de aprender técnicas, os estudantes também descobrem novas formas de se expressar e valorizar a cultura. É um lugar que une aprendizado, arte e imaginação.</p>
+        <p>Espaço criativo para pintura, desenho, teatro e música.</p>
       </div>
-      <div class="artes-media" onclick="toggleVideo()">
-        <img id="thumb" src="thumb.jpg">
-        <video id="video" src="cv (1).mp4"></video>
+
+      <div class="artes-media" onclick="toggleVideo('salaVideo','salaThumb')">
+        <img id="salaThumb" src="thumb.jpg">
+        <video id="salaVideo" src="cv (1).mp4"></video>
       </div>
     </div>
   </section>
 
-  <!-- AULAS -->
   <section id="aula">
     <h2 style="text-align:center;font-family:'Great Vibes',cursive;font-size:48px;">Aulas</h2>
     <div class="columns">
@@ -270,25 +244,24 @@
       <div class="box">
         <h3 style="text-align:center;">Tarde</h3>
         <ul>
-          <li>Quarta-feira<br>13:30 - 15:30<br><strong>MEC1</strong></li>
-          <li>Quinta-feira<br>13:30 - 15:30<br><strong>INFO1</strong></li>
-          <li>Quinta-feira<br>16:00 - 18:00<br><strong>AUT1</strong></li>
+          <li>Quarta<br>13:30 - 15:30<br><strong>MEC1</strong></li>
+          <li>Quinta<br>13:30 - 15:30<br><strong>INFO1</strong></li>
+          <li>Quinta<br>16:00 - 18:00<br><strong>AUT1</strong></li>
         </ul>
       </div>
 
       <div class="box">
         <h3 style="text-align:center;">Projetos</h3>
         <ul>
-          <li>Quarta-feira<br>09:00 - 11:00<br><strong>Audiovisual/Fotografia</strong></li>
-          <li>Quinta-feira<br>09:00 - 12:00<br><strong>Audiovisual/Fotografia</strong></li>
-          <li>Sexta-feira<br>08:00 - 10:00<br><strong>Clube dos Artistas</strong></li>
+          <li>Quarta<br>09:00 - 11:00<br><strong>Audiovisual / Fotografia</strong></li>
+          <li>Quinta<br>09:00 - 12:00<br><strong>Audiovisual / Fotografia</strong></li>
+          <li>Sexta<br>08:00 - 10:00<br><strong>Clube dos Artistas</strong></li>
         </ul>
       </div>
 
     </div>
   </section>
 
-  <!-- PROJETOS -->
   <section id="projetos">
     <h2 style="text-align:center;font-family:'Great Vibes',cursive;font-size:48px;">Projetos</h2>
 
@@ -296,18 +269,14 @@
 
       <div class="project-box">
         <h3>Fotografia</h3>
-        <div class="project-media">
-          <img src="WhatsApp Image 2025-12-10 at 20.35.46.jpeg">
-        </div>
-        <p>tem como objetivo despertar o olhar crítico e criativo de estudantes do ensino médio por meio da fotografia</p>
+        <img src="WhatsApp Image 2025-12-10 at 20.35.46.jpeg">
+        <p>Desenvolve o olhar crítico por meio da fotografia.</p>
       </div>
 
       <div class="project-box">
         <h3>Audiovisual</h3>
-       <img id="thumb" src="thumb.jpg">
-        <video id="video" src="cv(3).mp4"></video>
-        </div>
-        <p>tem como proposta apresentar os fundamentos da produção audiovisual, incentivando o desenvolvimento de habilidades criativas, técnicas e comunicativas por meio de vídeos.</p>
+        <video controls src="cv(3).mp4"></video>
+        <p>Desenvolve habilidades em produção de vídeo.</p>
       </div>
 
     </div>
@@ -321,7 +290,7 @@
         <img src="imagen4.jpeg">
         <img src="imagen5.jpeg">
       </div>
-      <p>tem como objetivo introduzir estudantes  ao universo da arte e da pintura, promovendo a experimentação, o autoconhecimento e o desenvolvimento da expressão criativa por meio das artes visuais. </p>
+      <p>Explora pintura e expressão artística.</p>
     </div>
 
   </section>
@@ -329,9 +298,9 @@
 </main>
 
 <script>
-function toggleVideo(){
-  const video = document.getElementById('video');
-  const thumb = document.getElementById('thumb');
+function toggleVideo(videoId, thumbId){
+  const video = document.getElementById(videoId);
+  const thumb = document.getElementById(thumbId);
   if(video.paused){
     video.play();
     thumb.style.display='none';
