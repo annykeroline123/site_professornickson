@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Leonardo Nickson — Site</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brown:#5d2b1f;
+      --light-brown:#d6a883;
+      --cream:#fff6f0;
+      --text:#3a2b27;
+      --card-bg:#f6d9c6;
+      --bg-light:#f3cdb7;
+      --box:#d9b8a5;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Montserrat', sans-serif;
+      background:var(--cream);
+      color:var(--text);
+    }
+
+    .site-header{
+      background:var(--brown);
+      padding:20px 24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .name-large{
+      font-family:'Great Vibes', cursive;
+      font-size:50px;
+      color:var(--cream);
+    }
+
+    .nav a{
+      background:var(--light-brown);
+      padding:10px 20px;
+      border-radius:28px;
+      font-weight:600;
+      color:var(--brown);
+      text-decoration:none;
+      margin-left:8px;
+    }
+
+    .container{max-width:1100px;margin:30px auto;padding:0 20px;}
+
+    .profile{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .photo-wrap img{
+      width:400px;
+      height:400px;
+      object-fit:cover;
+      border-radius:14px;
+    }
+
+    #artes{margin-top:80px}
+
+    .artes-card{
+      background:var(--card-bg);
+      border-radius:20px;
+      padding:28px;
+      display:flex;
+      gap:24px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .artes-media{
+      width:420px;
+      aspect-ratio:16/9;
+      background:#000;
+      border-radius:14px;
+      overflow:hidden;
+      cursor:pointer;
+    }
+
+    .artes-media img,
+    .artes-media video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    /* AULAS */
+    #aula{
+      margin-top:80px;
+      background:var(--bg-light);
+      padding:30px;
+      border-radius:20px;
+    }
+
+    .columns{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content:space-between;
+    }
+
+    .box{
+      background:var(--box);
+      width:32%;
+      min-width:260px;
+      padding:25px;
+      border-radius:18px;
+    }
+
+    #aula ul{
+      list-style:none;
+      padding:0;
+    }
+
+    #aula li{
+      background: rgba(255,255,255,0.35);
+      padding:12px;
+      border-radius:12px;
+      margin-bottom:14px;
+      text-align:center;
+    }
+
+    /* PROJETOS */
+    #projetos{margin-top:60px}
+
+    .projects-row{
+      display:flex;
+      gap:20px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .project-box{
+      background:var(--box);
+      width:40%;
+      min-width:250px;
+      padding:20px;
+      border-radius:18px;
+      text-align:center;
+    }
+
+    .project-box img,
+    .project-box video{
+      width:100%;
+      max-height:180px;
+      border-radius:12px;
+      object-fit:cover;
+    }
+
+    /* CLUBE DE ARTISTAS */
+    .art-club-box{
+      background:var(--box);
+      border-radius:18px;
+      padding:20px;
+      margin-top:40px;
+      text-align:center;
+    }
+
+    .art-row{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .art-row img{
+      width:80px;
+      height:100px;
+      object-fit:cover;
+      border-radius:8px;
+    }
+
+    @media (max-width:900px){
+      .profile{grid-template-columns:1fr}
+      .project-box,.box{width:100%}
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="name-large">Leonardo Nickson</div>
+  <nav class="nav">
+    <a href="#artes">Sala de Artes</a>
+    <a href="#aula">Aulas</a>
+    <a href="#projetos">Projetos</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="profile">
+    <div class="photo-wrap">
+      <img src="nickson.png">
+      <div>leonardo.silva@ifpr.edu.br</div>
+    </div>
+    <div class="bio">
+      <h2>Sobre o autor</h2>
+      <p>Leonardo Nickson é nascido em Telêmaco Borba, Paraná...</p>
+    </div>
+  </section>
+
+  <section id="artes">
+    <div class="artes-card">
+      <div>
+        <h2>Sala de Artes</h2>
+        <p>Espaço criativo para pintura, desenho, teatro e música.</p>
+      </div>
+
+      <div class="artes-media" onclick="toggleVideo('salaVideo','salaThumb')">
+        <img id="salaThumb" src="thumb.jpg">
+        <video id="salaVideo" src="cv (1).mp4"></video>
+      </div>
+    </div>
+  </section>
+
+  <section id="aula">
+    <h2 style="text-align:center;font-family:'Great Vibes',cursive;font-size:48px;">Aulas</h2>
+    <div class="columns">
+
+      <div class="box">
+        <h3 style="text-align:center;">Manhã</h3>
+        <ul>
+          <li>Sexta-feira<br>10:00 - 12:00<br><strong>Arte II</strong></li>
+          <li>AUT4 / MEC4 / INFO4<br>Sem aula<br><strong>Arte III</strong></li>
+          <li>JOG4 Lab de Música<br>13:30 - 15:30<br><strong>Arte I</strong></li>
+          <li>JOG1 Quiosque<br><strong>Arte e Vídeo</strong></li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3 style="text-align:center;">Tarde</h3>
+        <ul>
+          <li>Quarta<br>13:30 - 15:30<br><strong>MEC1</strong></li>
+          <li>Quinta<br>13:30 - 15:30<br><strong>INFO1</strong></li>
+          <li>Quinta<br>16:00 - 18:00<br><strong>AUT1</strong></li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3 style="text-align:center;">Projetos</h3>
+        <ul>
+          <li>Quarta<br>09:00 - 11:00<br><strong>Audiovisual / Fotografia</strong></li>
+          <li>Quinta<br>09:00 - 12:00<br><strong>Audiovisual / Fotografia</strong></li>
+          <li>Sexta<br>08:00 - 10:00<br><strong>Clube dos Artistas</strong></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2 style="text-align:center;font-family:'Great Vibes',cursive;font-size:48px;">Projetos</h2>
+
+    <div class="projects-row">
+
+      <div class="project-box">
+        <h3>Fotografia</h3>
+        <img src="WhatsApp Image 2025-12-10 at 20.35.46.jpeg">
+        <p>Desenvolve o olhar crítico por meio da fotografia.</p>
+      </div>
+
+      <div class="project-box">
+        <h3>Audiovisual</h3>
+        <video controls src="cv(3).mp4"></video>
+        <p>Desenvolve habilidades em produção de vídeo.</p>
+      </div>
+
+    </div>
+
+    <div class="art-club-box">
+      <h2 style="font-family:'Great Vibes',cursive;">Clube de Artistas</h2>
+      <div class="art-row">
+        <img src="imagen1.jpeg">
+        <img src="imagen2.jpeg">
+        <img src="imagen3.jpeg">
+        <img src="imagen4.jpeg">
+        <img src="imagen5.jpeg">
+      </div>
+      <p>Explora pintura e expressão artística.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<script>
+function toggleVideo(videoId, thumbId){
+  const video = document.getElementById(videoId);
+  const thumb = document.getElementById(thumbId);
+  if(video.paused){
+    video.play();
+    thumb.style.display='none';
+  }else{
+    video.pause();
+  }
+}
+</script>
+
+</body>
+</html>
