@@ -1,618 +1,280 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Leonardo Nickson — Site</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Leonardo Nickson — Site</title>
 
-  <style>
-    :root{
-      --brown:#5d2b1f;
-      --light-brown:#d6a883;
-      --cream:#fff6f0;
-      --text:#3a2b27;
-      --card-bg: #f6d9c6;
-      --bg-dark: #5a2f23;
-      --bg-light: #f3cdb7;
-      --box: #d9b8a5;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    *{box-sizing:border-box}
+<style>
+:root{
+  --brown:#5d2b1f;
+  --light-brown:#d6a883;
+  --cream:#fff6f0;
+  --text:#3a2b27;
+  --card-bg:#f6d9c6;
+  --bg-light:#f3cdb7;
+  --box:#d9b8a5;
+}
 
-    body{
-      margin:0;
-      font-family:'Montserrat', sans-serif;
-      background:var(--cream);
-      color:var(--text);
-      line-height:1.6;
-    }
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Montserrat', sans-serif;
+  background:var(--cream);
+  color:var(--text);
+}
 
-    /* HEADER */
-    .site-header{
-      background:var(--brown);
-      padding:20px 24px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-    }
+/* HEADER */
+.site-header{
+  background:var(--brown);
+  padding:20px 24px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
 
-    .name-large{
-      font-family:'Great Vibes', cursive;
-      font-size:50px;
-      color:var(--cream);
-    }
+.name-large{
+  font-family:'Great Vibes', cursive;
+  font-size:50px;
+  color:white;
+}
 
-    .nav{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
+.nav a{
+  background:var(--light-brown);
+  padding:10px 20px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  color:var(--brown);
+}
 
-    .nav a{
-      background:var(--light-brown);
-      padding:10px 20px;
-      border-radius:28px;
-      font-weight:600;
-      color:var(--brown);
-      text-decoration:none;
-    }
+/* CONTAINER */
+.container{
+  max-width:1100px;
+  margin:30px auto;
+  padding:0 20px 60px;
+}
 
-    .container{
-      max-width:1100px;
-      margin:30px auto;
-      padding:0 20px 60px;
-    }
+/* PERFIL */
+.profile{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
 
-    /* PERFIL */
-    .profile{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px;
-      align-items:center;
-    }
+.photo-wrap img{
+  width:300px;
+  height:300px;
+  border-radius:15px;
+  object-fit:cover;
+}
 
-    .photo-wrap{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      align-items:center;
-    }
+/* SALA DE ARTES */
+.artes-card{
+  background:var(--card-bg);
+  border-radius:20px;
+  padding:25px;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:50px;
+}
 
-    .photo-wrap img{
-      width:400px;
-      height:400px;
-      object-fit:cover;
-      border-radius:14px;
-    }
+.artes-media{
+  width:400px;
+  aspect-ratio:16/9;
+  border-radius:15px;
+  overflow:hidden;
+  position:relative;
+}
 
-    .email{
-      font-size:14px;
-      color:var(--brown);
-      font-weight:500;
-    }
+/* AULAS */
+#aula{
+  margin-top:60px;
+  background:var(--bg-light);
+  padding:30px;
+  border-radius:20px;
+}
 
-    .bio h2{
-      margin:0 0 10px 0;
-      font-size:22px;
-    }
+.columns{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
 
-    .bio p{
-      margin:0 0 14px 0;
-      text-align:justify;
-    }
+.box{
+  background:var(--box);
+  flex:1 1 30%;
+  min-width:260px;
+  padding:20px;
+  border-radius:15px;
+}
 
-    /* SALA DE ARTES */
-    #artes{
-      margin-top:80px;
-    }
+/* PROJETOS */
+#projetos{
+  margin-top:60px;
+}
 
-    .artes-card{
-      background: var(--card-bg);
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 6px 0 rgba(0,0,0,0.05);
-      display:flex;
-      gap:24px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
+.projects-row{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
 
-    .artes-text{
-      flex:1 1 400px;
-    }
+.project-box{
+  background:var(--box);
+  width:40%;
+  max-width:380px;
+  min-width:260px;
+  padding:15px;
+  border-radius:15px;
+  text-align:center;
+}
 
-    .artes-text h2{
-      margin:0 0 14px 0;
-      font-family:"Great Vibes", cursive;
-      font-size:46px;
-      color:#2b150f;
-    }
+.project-box img,
+.video-wrapper{
+  height:170px;
+  width:100%;
+  object-fit:cover;
+  border-radius:12px;
+}
 
-    .artes-text p{
-      margin:0;
-      font-size:18px;
-      text-align:justify;
-    }
+.video-wrapper{position:relative;}
 
-    .artes-media{
-      width:420px;
-      max-width:100%;
-      position:relative;
-      border-radius:14px;
-      overflow:hidden;
-      background:#000;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-      aspect-ratio:16/9;
-      cursor:pointer;
-    }
+.play-btn{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:rgba(0,0,0,.5);
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-    .artes-media img,
-    .artes-media video{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
+.play-btn svg{
+  fill:white;
+  width:26px;
+  height:26px;
+}
 
-    .play{
-      position:absolute;
-      inset:0;
-      margin:auto;
-      width:80px;
-      height:80px;
-      background: rgba(0,0,0,0.5);
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border:5px solid rgba(255,255,55,0.15);
-    }
+/* CLUBE */
+.art-row{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
 
-    .play:before{
-      content:'';
-      margin-left:6px;
-      border-style:solid;
-      border-width:16px 0 16px 26px;
-      border-color:transparent transparent transparent white;
-    }
-
-    /* AULAS */
-    #aula{
-      margin-top:80px;
-      background: var(--bg-light);
-      padding:30px;
-      border-radius:20px;
-    }
-
-    #aula h2{
-      text-align:center;
-      font-family:"Great Vibes", cursive;
-      font-size:48px;
-      margin:0 0 25px 0;
-      color:#5a2f23;
-    }
-
-    .columns{
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:20px;
-    }
-
-    .box{
-      background: var(--box);
-      width:32%;
-      min-width:260px;
-      padding:25px;
-      border-radius:18px;
-    }
-
-    .box h3{
-      text-align:center;
-      font-size:26px;
-      margin-bottom:15px;
-    }
-
-    .box ul{
-      padding-left:18px;
-      line-height:1.6;
-    }
-
-    .box li{
-      margin-bottom:12px;
-    }
-
-    @media (max-width:900px){
-      .profile{grid-template-columns:1fr;}
-      .photo-wrap img{width:280px;height:280px;}
-      .name-large{font-size:36px;}
-      .box{width:100%;}
-    }
-  </style>
+@media (max-width:900px){
+  .profile{grid-template-columns:1fr;}
+  .project-box,.box{width:100%;}
+}
+</style>
 </head>
 
 <body>
 
 <header class="site-header">
   <div class="name-large">Leonardo Nickson</div>
-
   <nav class="nav">
-    <a href="#artes">Sala de artes</a>
-    <a href="#aula">Aula</a>
+    <a href="#artes">Sala de Artes</a>
+    <a href="#aula">Aulas</a>
     <a href="#projetos">Projetos</a>
   </nav>
 </header>
 
 <main class="container">
 
-  <!-- PERFIL -->
-  <section class="profile">
-    <div class="photo-wrap">
-      <img src="nickson.png" alt="Foto de Leonardo">
-      <div class="email">leonardo.silva@ifpr.edu.br</div>
+<!-- PERFIL -->
+<section class="profile">
+  <div class="photo-wrap">
+    <img src="nickson.png">
+    <div>leonardo.silva@ifpr.edu.br</div>
+  </div>
+  <div>
+    <h2>Sobre o autor</h2>
+    <p>Leonardo Nickson é professor e trabalha com fotografia e audiovisual.</p>
+  </div>
+</section>
+
+<!-- SALA DE ARTES -->
+<section id="artes">
+  <div class="artes-card">
+    <div>
+      <h2>Sala de Artes</h2>
+      <p>Espaço dedicado à produção artística.</p>
     </div>
 
-    <div class="bio">
-      <h2>Sobre o autor</h2>
-      <p>Leonardo Nickson é nascido em Telêmaco Borba, Paraná. Iniciou estudos na área musical e em História pela UEL.</p>
-      <p>Especialista em Artes Visuais (UEM) e Mestre pela UTFPR. Atua com fotografia e audiovisual.</p>
+    <div class="artes-media" onclick="toggleVideo()">
+      <img src="thumb.jpg">
+      <video src="video.mp4" hidden></video>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SALA DE ARTES -->
-  <section id="artes">
-    <div class="artes-card">
-      <div class="artes-text">
-        <h2>Sala de Artes</h2>
-        <p>Este espaço é dedicado à produção artística, vídeos, imagens e projetos visuais.</p>
-      </div>
+<!-- AULAS -->
+<section id="aula">
+  <h2 style="text-align:center;font-family:'Great Vibes';font-size:42px;">Horários</h2>
 
-      <div class="artes-media" onclick="toggleVideo()">
-        <img id="thumb" src="https://images.unsplash.com/photo-1529421306624-2c27d8f0d2b2?auto=format&fit=crop&w=1200&q=60">
-        <video id="video" src="cv (1).mp4"></video>
-        <div class="play" id="playBtn"></div>
-      </div>
-    </div>
-  </section>
+  <div class="columns">
+    <div class="box"><h3>Manhã</h3>...</div>
+    <div class="box"><h3>Tarde</h3>...</div>
+    <div class="box"><h3>Projetos</h3>...</div>
+  </div>
+</section>
 
- <style>
+<!-- PROJETOS -->
+<section id="projetos">
+  <h2 style="text-align:center;font-family:'Great Vibes';font-size:42px;">Projetos</h2>
 
-:root {
-    --bg-dark: #5a2f23;
-    --bg-light: #f3cdb7;
-    --box: #d9b8a5;
-    --text: #3a2a22;
-}
-body {
-    margin: 0;
-    background: var(--bg-dark);
-    font-family: "Montserrat", sans-serif;
-    display: flex;
-    justify-content: center;
-}
-
-.container {
-    width: 100%;
-    max-width: 1150px;
-    background: var(--bg-light);
-    padding: 30px;
-    border-radius: 20px;
-    margin: 20px;
-}
-
-h1 {
-    text-align: center;
-    font-size: 55px;
-    font-family: "Great Vibes", cursive;
-    color: #f0d8c6;
-    margin: 25px 0;
-}
-
-.section-title {
-    text-align: center;
-    font-family: "Great Vibes", cursive;
-    font-size: 42px;
-    color: var(--bg-dark);
-    margin-bottom: 20px;
-}
-
-.sala-artes-card {
-    background: var(--box);
-    padding: 25px;
-    border-radius: 18px;
-    display: flex;
-    gap: 25px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-}
-
-.sala-text {
-    flex: 1;
-    min-width: 260px;
-}
-
-.sala-text h2 {
-    font-family: "Great Vibes", cursive;
-    font-size: 48px;
-    margin-top: 0;
-}
-
-.sala-text p {
-    text-align: justify;
-    font-size: 17px;
-}
-
-.sala-media {
-    width: 420px;
-    max-width: 100%;
-    border-radius: 14px;
-    overflow: hidden;
-    position: relative;
-}
-
-.sala-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.play-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.4);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.play-btn svg {
-    width: 38px;
-    height: 38px;
-    fill: white;
-    margin-left: 5px;
-}
-
-.columns {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.box {
-    background: var(--box);
-    width: 32%;
-    min-width: 260px;
-    padding: 25px;
-    border-radius: 18px;
-}
-
-.box h2 {
-    text-align: center;
-    font-size: 26px;
-}
-
-ul {
-    padding-left: 18px;
-    line-height: 1.6;
-}
-
-li {
-    margin-bottom: 12px;
-}
-
-
-.projects-row {
-    display: flex;
-    gap: 25px;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.project-box {
-    background: var(--box);
-    width: 48%;
-    min-width: 260px;
-    padding: 25px;
-    border-radius: 18px;
-    text-align: center;
-}
-
-.project-box h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.project-media img {
-    width: 100%;
-    height: 230px;
-    border-radius: 14px;
-    object-fit: cover;
-}
-
-.video-wrapper {
-    position: relative;
-    width: 100%;
-    height: 230px;
-    border-radius: 14px;
-    overflow: hidden;
-}
-
-.video-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.desc {
-    margin-top: 15px;
-    font-size: 17px;
-    line-height: 1.6;
-}
-
-.art-club-box {
-    background: var(--box);
-    padding: 25px;
-    border-radius: 18px;
-    margin-top: 35px;
-    text-align: center;
-}
-
-.art-row {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.art-row img {
-    width: 130px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-@media (max-width: 900px) {
-    .project-box, .box {
-        width: 100%;
-    }
-    .sala-media {
-        width: 100%;
-    }
-}
-</style>
-</head>
-
-<body>
-<div class="container">
-
-<h1>Sala de Artes</h1>
-
-<div class="sala-artes-card">
-
-    <div class="sala-text">
-        <h2>Sala de artes</h2>
-        <p>
-            A sala de Artes do IFPR é um espaço onde os alunos podem soltar a criatividade e experimentar diferentes formas de expressão, como pintura, desenho, teatro e música. O ambiente é acolhedor e cheio de possibilidades. Além de aprender técnicas, os estudantes também descobrem novas formas de se expressar e valorizar a cultura. É um lugar que une aprendizado, arte e imaginação.
-        </p>
+  <div class="projects-row">
+    <div class="project-box">
+      <h3>Fotografia</h3>
+      <img src="foto.jpg">
+      <p>Desenvolvimento do olhar artístico.</p>
     </div>
 
-    <div class="sala-media">
+    <div class="project-box">
+      <h3>Audiovisual</h3>
+      <div class="video-wrapper">
         <img src="thumb.jpg">
         <div class="play-btn" onclick="playVideo(this)">
-            <svg viewBox="0 0 24 24">
-                <path d="M4 2v20l17-10L4 2z"></path>
-            </svg>
+          <svg viewBox="0 0 24 24"><path d="M4 2v20l17-10L4 2z"/></svg>
         </div>
+      </div>
+      <p>Criação de vídeos e filmes estudantis.</p>
     </div>
+  </div>
+</section>
 
-</div>
+<!-- CLUBE -->
+<section>
+  <h2 style="text-align:center;margin-top:50px;">Clube de Artistas</h2>
+  <div class="art-row">
+    <img src="imagen1.jpeg">
+    <img src="imagen2.jpeg">
+    <img src="imagen3.jpeg">
+  </div>
+</section>
 
-<h1>Aulas</h1>
-<div class="section-title">Horários</div>
-
-<div class="columns">
-
-    <div class="box">
-        <h2>Manhã</h2>
-        <ul>
-            <li>Sexta - Feira<br>10:00 - 12:00<br><strong>Arte II</strong></li>
-            <li>AUT4 / MEC4 / INFO4<br>Sem aula - Arte III</li>
-            <li>JOG4 Lab de Música<br>13:30 - 15:30<br><strong>Arte I</strong></li>
-            <li>JOG1 Quiosque de Arte e Vídeo</li>
-        </ul>
-    </div>
-
-    <div class="box">
-        <h2>Tarde</h2>
-        <ul>
-            <li>Quarta<br>13:30 - 15:30<br>MEC1 Quiosque Arte</li>
-            <li>Quinta<br>13:30 - 15:30<br>INFO1 Quiosque Arte</li>
-            <li>Quinta<br>16:00 - 18:00<br>AUT1 Quiosque Arte</li>
-        </ul>
-    </div>
-
-    <div class="box">
-        <h2>Projetos</h2>
-        <ul>
-            <li>Quarta<br>Audiovisual/Fotografia<br>9:00 - 11:00</li>
-            <li>Quinta<br>Audiovisual/Fotografia<br>9:00 - 12:00</li>
-            <li>Sexta<br>Clube dos Artistas<br>8:00 - 10:00</li>
-        </ul>
-    </div>
-
-</div>
-
-<h1>Projetos</h1>
-
-<div class="projects-row">
-
-    <div class="project-box">
-        <h2>Fotografia</h2>
-        <img src="WhatsApp Image 2025-12-10 at 20.35.46.jpeg" class="project-media">
-        <p class="desc">
-            tem como objetivo despertar o olhar crítico e criativo dos estudantes por meio da fotografia.
-        </p>
-    </div>
-
-    <div class="project-box">
-        <h2>Audiovisual</h2>
-
-        <div class="video-wrapper">
-            <img src="cv (3).mp4">
-            <div class="play-btn" onclick="playVideo(this)">
-                <svg viewBox="0 0 24 24">
-                    <path d="M4 2v20l17-10L4 2z"></path>
-                </svg>
-            </div>
-        </div>
-
-        <p class="desc">
-            promove a produção audiovisual e o desenvolvimento da criatividade através do vídeo.
-        </p>
-    </div>
-
-</div>
-
-<!-- ================= CLUBE DE ARTISTAS ================= -->
-
-<h1>Clube de Artistas</h1>
-
-<div class="art-club-box">
-
-    <div class="art-row">
-        <img src="imagen1.jpeg">
-        <img src="imagen2.jpeg">
-        <img src="imagen3.jpeg">
-        <img src="imagen4.jpeg">
-        <img src="imagen5.jpeg">
-    </div>
-
-    <p class="desc">
-        tem como objetivo introduzir estudantes ao universo da arte e da pintura, promovendo experimentação, autoconhecimento e criatividade.
-    </p>
-
-</div>
-
-</div>
+</main>
 
 <script>
 function playVideo(btn){
-    const box = btn.parentElement;
-    box.innerHTML = `
-        <video autoplay controls style="width:100%; height:100%; object-fit:cover;">
-            <source src="video.mp4" type="video/mp4">
-        </video>
-    `;
+  const box = btn.parentElement;
+  box.innerHTML = `
+    <video autoplay controls style="width:100%;height:100%;border-radius:12px;">
+      <source src="video.mp4" type="video/mp4">
+    </video>
+  `;
 }
 </script>
 
