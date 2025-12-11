@@ -1,183 +1,189 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Leonardo Nickson — Site</title>
 
-<title>Leonardo Nickson — Site</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brown:#5d2b1f;
+      --light-brown:#d6a883;
+      --cream:#fff6f0;
+      --text:#3a2b27;
+      --card-bg: #f6d9c6;
+      --bg-dark: #5a2f23;
+      --bg-light: #f3cdb7;
+      --box: #d9b8a5;
+    }
 
-<style>
-:root{
-  --brown:#5d2b1f;
-  --light-brown:#d6a883;
-  --cream:#fff6f0;
-  --text:#3a2b27;
-  --card-bg:#f6d9c6;
-  --bg-light:#f3cdb7;
-  --box:#d9b8a5;
-}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Montserrat', sans-serif;
+      background:var(--cream);
+      color:var(--text);
+      line-height:1.6;
+    }
 
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:'Montserrat', sans-serif;
-  background:var(--cream);
-  color:var(--text);
-}
+    .site-header{
+      background:var(--brown);
+      padding:20px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
 
-/* HEADER */
-.site-header{
-  background:var(--brown);
-  padding:20px 24px;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-}
+    .name-large{
+      font-family:'Great Vibes', cursive;
+      font-size:50px;
+      color:#fff6f0;
+    }
 
-.name-large{
-  font-family:'Great Vibes', cursive;
-  font-size:50px;
-  color:white;
-}
+    .nav{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
 
-.nav a{
-  background:var(--light-brown);
-  padding:10px 20px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:600;
-  color:var(--brown);
-}
+    .nav a{
+      background:var(--light-brown);
+      padding:10px 20px;
+      border-radius:28px;
+      font-weight:600;
+      color:var(--brown);
+      text-decoration:none;
+    }
 
-/* CONTAINER */
-.container{
-  max-width:1100px;
-  margin:30px auto;
-  padding:0 20px 60px;
-}
+    .container{
+      max-width:1100px;
+      margin:30px auto;
+      padding:0 20px 60px;
+    }
 
-/* PERFIL */
-.profile{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
-}
+    .profile{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      align-items:center;
+    }
 
-.photo-wrap img{
-  width:300px;
-  height:300px;
-  border-radius:15px;
-  object-fit:cover;
-}
+    .photo-wrap img{
+      width:400px;
+      height:400px;
+      object-fit:cover;
+      border-radius:14px;
+    }
 
-/* SALA DE ARTES */
-.artes-card{
-  background:var(--card-bg);
-  border-radius:20px;
-  padding:25px;
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  margin-top:50px;
-}
+    #artes{margin-top:80px;}
 
-.artes-media{
-  width:400px;
-  aspect-ratio:16/9;
-  border-radius:15px;
-  overflow:hidden;
-  position:relative;
-}
+    .artes-card{
+      background:#f6d9c6;
+      border-radius:20px;
+      padding:28px;
+      display:flex;
+      gap:24px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
 
-/* AULAS */
-#aula{
-  margin-top:60px;
-  background:var(--bg-light);
-  padding:30px;
-  border-radius:20px;
-}
+    .artes-media{
+      width:420px;
+      aspect-ratio:16/9;
+      position:relative;
+      overflow:hidden;
+      background:#000;
+      border-radius:14px;
+      cursor:pointer;
+    }
 
-.columns{
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
-}
+    .artes-media img,
+    .artes-media video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
 
-.box{
-  background:var(--box);
-  flex:1 1 30%;
-  min-width:260px;
-  padding:20px;
-  border-radius:15px;
-}
+    #aula{
+      margin-top:80px;
+      background:var(--bg-light);
+      padding:30px;
+      border-radius:20px;
+    }
 
-/* PROJETOS */
-#projetos{
-  margin-top:60px;
-}
+    .columns{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content:space-between;
+    }
 
-.projects-row{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
+    .box{
+      background:var(--box);
+      width:32%;
+      min-width:260px;
+      padding:25px;
+      border-radius:18px;
+    }
 
-.project-box{
-  background:var(--box);
-  width:40%;
-  max-width:380px;
-  min-width:260px;
-  padding:15px;
-  border-radius:15px;
-  text-align:center;
-}
+    /* PROJETOS */
+    #projetos{margin-top:60px;}
 
-.project-box img,
-.video-wrapper{
-  height:170px;
-  width:100%;
-  object-fit:cover;
-  border-radius:12px;
-}
+    .projects-row{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
 
-.video-wrapper{position:relative;}
+    .project-box{
+      background:var(--box);
+      width:45%;
+      min-width:260px;
+      padding:20px;
+      border-radius:18px;
+      text-align:center;
+    }
 
-.play-btn{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  background:rgba(0,0,0,.5);
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+    .project-media img{
+      width:100%;
+      height:180px;
+      border-radius:12px;
+      object-fit:cover;
+    }
 
-.play-btn svg{
-  fill:white;
-  width:26px;
-  height:26px;
-}
+    /* CLUBE DE ARTISTAS */
+    .art-club-box{
+      background:var(--box);
+      border-radius:18px;
+      padding:20px;
+      margin-top:40px;
+      text-align:center;
+    }
 
-/* CLUBE */
-.art-row{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
+    .art-row{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-bottom:15px;
+    }
 
-@media (max-width:900px){
-  .profile{grid-template-columns:1fr;}
-  .project-box,.box{width:100%;}
-}
-</style>
+    .art-row img{
+      width:90px;
+      height:110px;
+      object-fit:cover;
+      border-radius:8px;
+    }
+
+    @media (max-width:900px){
+      .profile{grid-template-columns:1fr;}
+      .project-box, .box{width:100%;}
+    }
+  </style>
 </head>
 
 <body>
@@ -193,88 +199,86 @@ body{
 
 <main class="container">
 
-<!-- PERFIL -->
-<section class="profile">
-  <div class="photo-wrap">
-    <img src="nickson.png">
-    <div>leonardo.silva@ifpr.edu.br</div>
-  </div>
-  <div>
-    <h2>Sobre o autor</h2>
-    <p>Leonardo Nickson é professor e trabalha com fotografia e audiovisual.</p>
-  </div>
-</section>
-
-<!-- SALA DE ARTES -->
-<section id="artes">
-  <div class="artes-card">
-    <div>
-      <h2>Sala de Artes</h2>
-      <p>Espaço dedicado à produção artística.</p>
+  <section class="profile">
+    <div class="photo-wrap">
+      <img src="nickson.png">
+      <div class="email">leonardo.silva@ifpr.edu.br</div>
     </div>
-
-    <div class="artes-media" onclick="toggleVideo()">
-      <img src="thumb.jpg">
-      <video src="video.mp4" hidden></video>
+    <div class="bio">
+      <h2>Sobre o autor</h2>
+      <p>Leonardo Nickson é nascido em Telêmaco Borba, Paraná...</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- AULAS -->
-<section id="aula">
-  <h2 style="text-align:center;font-family:'Great Vibes';font-size:42px;">Horários</h2>
-
-  <div class="columns">
-    <div class="box"><h3>Manhã</h3>...</div>
-    <div class="box"><h3>Tarde</h3>...</div>
-    <div class="box"><h3>Projetos</h3>...</div>
-  </div>
-</section>
-
-<!-- PROJETOS -->
-<section id="projetos">
-  <h2 style="text-align:center;font-family:'Great Vibes';font-size:42px;">Projetos</h2>
-
-  <div class="projects-row">
-    <div class="project-box">
-      <h3>Fotografia</h3>
-      <img src="foto.jpg">
-      <p>Desenvolvimento do olhar artístico.</p>
+  <section id="artes">
+    <div class="artes-card">
+      <div>
+        <h2>Sala de Artes</h2>
+        <p>Espaço dedicado à produção artística e audiovisual.</p>
+      </div>
+      <div class="artes-media" onclick="toggleVideo()">
+        <img id="thumb" src="thumb.jpg">
+        <video id="video" src="video.mp4"></video>
+      </div>
     </div>
+  </section>
 
-    <div class="project-box">
-      <h3>Audiovisual</h3>
-      <div class="video-wrapper">
-        <img src="thumb.jpg">
-        <div class="play-btn" onclick="playVideo(this)">
-          <svg viewBox="0 0 24 24"><path d="M4 2v20l17-10L4 2z"/></svg>
+  <section id="aula">
+    <h2>Aulas</h2>
+    <div class="columns">
+      <div class="box"><h3>Manhã</h3></div>
+      <div class="box"><h3>Tarde</h3></div>
+      <div class="box"><h3>Projetos</h3></div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2 style="text-align:center;font-family:'Great Vibes',cursive;font-size:48px;">Projetos</h2>
+
+    <div class="projects-row">
+
+      <div class="project-box">
+        <h3>Fotografia</h3>
+        <div class="project-media">
+          <img src="foto1.jpg">
         </div>
       </div>
-      <p>Criação de vídeos e filmes estudantis.</p>
-    </div>
-  </div>
-</section>
 
-<!-- CLUBE -->
-<section>
-  <h2 style="text-align:center;margin-top:50px;">Clube de Artistas</h2>
-  <div class="art-row">
-    <img src="imagen1.jpeg">
-    <img src="imagen2.jpeg">
-    <img src="imagen3.jpeg">
-  </div>
-</section>
+      <div class="project-box">
+        <h3>Audiovisual</h3>
+        <div class="project-media">
+          <img src="thumb-video.jpg">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="art-club-box">
+      <h2 style="font-family:'Great Vibes',cursive;">Clube de Artistas</h2>
+      <div class="art-row">
+        <img src="imagen1.jpeg">
+        <img src="imagen2.jpeg">
+        <img src="imagen3.jpeg">
+        <img src="imagen4.jpeg">
+        <img src="imagen5.jpeg">
+      </div>
+      <p>Projeto voltado à pintura e expressão artística.</p>
+    </div>
+
+  </section>
 
 </main>
 
 <script>
-function playVideo(btn){
-  const box = btn.parentElement;
-  box.innerHTML = `
-    <video autoplay controls style="width:100%;height:100%;border-radius:12px;">
-      <source src="video.mp4" type="video/mp4">
-    </video>
-  `;
+function toggleVideo(){
+  const video = document.getElementById('video');
+  const thumb = document.getElementById('thumb');
+  if(video.paused){
+    video.play();
+    thumb.style.display='none';
+  }else{
+    video.pause();
+  }
 }
 </script>
 
